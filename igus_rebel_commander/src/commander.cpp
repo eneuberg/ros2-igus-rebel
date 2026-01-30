@@ -213,7 +213,7 @@ int main(int argc, char** argv) {
     moveit_msgs::msg::RobotTrajectory trajectory = my_plan.trajectory;
 
     // show output of planned movement
-    RCLCPP_INFO(LOGGER, "Visualizing plan 1 (pose goal): result = %s", moveit::core::error_code_to_string(response).c_str());
+    RCLCPP_INFO(LOGGER, "Visualizing plan 1 (pose goal): result = %s", moveit::core::errorCodeToString(response).c_str());
 
     // Visualize the result
     // NOTE: display trajectory not working at the moment
@@ -274,7 +274,7 @@ int main(int argc, char** argv) {
     response = move_group.plan(my_plan_2);
 
     // visualizing the trajectory
-    RCLCPP_INFO(LOGGER, "Visualizing plan 2 (joint goal): result = %s", moveit::core::error_code_to_string(response).c_str());
+    RCLCPP_INFO(LOGGER, "Visualizing plan 2 (joint goal): result = %s", moveit::core::errorCodeToString(response).c_str());
 
 
     visual_tools.publishTrajectoryPath(my_plan_2.trajectory, my_plan_2.start_state);
@@ -367,7 +367,7 @@ int main(int argc, char** argv) {
     response = move_group.plan(my_plan_3);
     bool success = (response == moveit::core::MoveItErrorCode::SUCCESS);
 
-    RCLCPP_INFO(LOGGER, "Plan 3 result = %s", moveit::core::error_code_to_string(response).c_str());
+    RCLCPP_INFO(LOGGER, "Plan 3 result = %s", moveit::core::errorCodeToString(response).c_str());
     RCLCPP_INFO(LOGGER, "Visualizing plan 3 (pose goal move around cuboid) %s", success ? "" : "FAILED");
 
     visual_tools.publishText(text_pose, "Obstacle_Goal", rvt::WHITE, rvt::XLARGE);

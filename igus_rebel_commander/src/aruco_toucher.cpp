@@ -317,7 +317,7 @@ bool ArucoToucher::robotPlanAndMove(geometry_msgs::msg::PoseStamped::SharedPtr t
 	}
 
 	// show output of planned movement
-	RCLCPP_INFO(LOGGER, "Plan result = %s", moveit::core::error_code_to_string(response).c_str());
+	RCLCPP_INFO(LOGGER, "Plan result = %s", moveit::core::errorCodeToString(response).c_str());
 
 	// visualizing the trajectory
 	joint_model_group = move_group->getCurrentState()->getJointModelGroup(PLANNING_GROUP);
@@ -395,7 +395,7 @@ bool ArucoToucher::robotPlanAndMove(std::vector<double> joint_space_goal) {
 	}
 
 	// visualizing the trajectory
-	RCLCPP_INFO(LOGGER, "Planning to the searching position = %s", moveit::core::error_code_to_string(response).c_str());
+	RCLCPP_INFO(LOGGER, "Planning to the searching position = %s", moveit::core::errorCodeToString(response).c_str());
 
 	visual_tools->setBaseFrame(root_base_frame);
 	visual_tools->publishTrajectoryLine(search_plan.trajectory, goal_state.getLinkModel(end_effector_link), joint_model_group);
