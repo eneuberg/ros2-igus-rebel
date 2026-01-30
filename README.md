@@ -1,3 +1,7 @@
+# Purpose of this fork
+
+Porting to ROS2 Jazzy to enable working on Ubuntu 24.04 Noble
+
 # Igus Rebel ROS2 Autonomous Control with MoveIt2 and Gazebo Ignition
 
 This repository contains the ROS2 packages for controlling the Igus Rebel robot arm with MoveIt2 and Gazebo Ignition Fortress.
